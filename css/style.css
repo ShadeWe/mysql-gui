@@ -1,0 +1,60 @@
+html, body {
+	margin: 0;
+}
+
+#loginBox {
+	width: 400px;
+	height: 300px;
+	background-color: #F3F3F3;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -200px;
+	margin-top: -150px;
+	box-shadow: 0px 0px 12px rgba(0,0,0,0.3);
+}
+
+#usernameInput {
+	font-size: 10px;
+	padding: 10px;
+	width: 300px;
+	outline: none;
+	border: none;
+	position: absolute;
+	top: 100px;
+	left: 50px;
+}
+
+#passwordInput {
+	font-size: 10px;
+	padding: 10px;
+	width: 300px;
+	outline: none;
+	border: none;
+	position: absolute;
+	top: 140px;
+	left: 50px;
+}
+
+#loginButton {
+	user-select: none;
+	font-family: Arial;
+	font-weight: bold;
+	color: white;
+	text-shadow: 0px 0px 1px rgba(0,0,0,0.5);
+	background-color: #A7D5E4;
+	width: 400px;
+	height: 60px;
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+	line-height: 60px;
+	transition-property: background-color;
+	transition-duration: 0.2s;
+}
+#loginButton:hover {
+	background-color: #97C8D8;
+}
+#loginButton:active {
+	background-color: #7EAFBF;
+}
