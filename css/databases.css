@@ -1,0 +1,63 @@
+html, body {
+	margin: 0;
+}
+
+.dbnameContainer {
+	width: 135px;
+	background-color: #C0E9E1;
+	padding: 8px;
+	font-family: Arial;
+	font-size: 13px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	transition-property: background-color;
+	transition-duration: 0.2s;
+	user-select: none;
+}
+.dbnameContainer:hover {
+	background-color: #B1DFD6;
+}
+.dbnameContainer:active {
+	background-color: #9CCAC1;
+}
+
+#dbsContainer {
+	margin-top: 20px;
+	width: 150px;
+	height: 400px;
+}
+
+#databases {
+	user-select: none;
+	font-family: Arial;
+	font-size: 12px;
+	margin-top: 50px;
+	text-align: center;
+}
+
+#leftPanel {
+	position: absolute;
+	background-color: #F8F8F8;
+	width: 150px;
+	height: 100%;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+#logo {
+	margin-left: 10px;
+	margin-top: 10px;
+	padding: 5px; 
+	user-select: none;
+}
+
+#lWord {
+	font-weight: bold;
+	font-size: 40px;
+	font-family: Arial;
+}
+
+#sWord {
+	font-weight: bold;
+	font-size: 10px;
+	font-family: Arial;
+}
