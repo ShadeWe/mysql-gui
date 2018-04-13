@@ -1,11 +1,70 @@
-<link rel="stylesheet" type="text/css" href="css/loginpage.css">
-<script src="js/loginpage.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/home.css">
+<script type="text/javascript" src="js/databasesPage.js"></script>
 
+<div id="userInfoBox">
+			
+			<?php 
+				echo "DBMS version: " . "<b>" .$data["version"] . "</b>" . "<br>";
+				echo "You are logged on as: " . "<b>" . $_SESSION["username"] . "</b>";
+			?>
 
-<div id="loginBox">
-	<input id="usernameInput" type="text" name="" placeholder="USERNAME">
-	<input id="passwordInput" type="text" name="" placeholder="PASSWORD">
-	<div id="loginButton">LOGIN</div>
+</div>
+
+<div id="leftPanel">
+	
+	<div id="logo">
+		<span id="lWord">SQL</span>
+		<span id="sWord">EATER</span>
+	</div>
+
+	<div id="buttonContainer">
+		<div class="leftPanelButtons">SQL REQUEST</div>
+		<div class="leftPanelButtons">IMPORT</div>
+		<div class="leftPanelButtons">EXPORT</div>
+	</div>
+
+	<div class="leftPanelButtons" id="exitButton">
+		EXIT
+	</div>
+
 </div>
 
 
+<div id='wrap'>
+
+	<div id="deletedb">DELETE</div>
+	<div id="selectedInformer">
+		<span style="font-weight: bold; font-family: Arial; font-size: 12px;">0</span>
+		<span style="font-weight: lighter; font-family: Arial; font-size: 12px;">selected</span>
+	</div>
+
+	<div class="funcButtons" id="createdb">CREATE A DATABASE</div>
+	<div class="funcButtons" id="showvars">SYSTEM VARIABLES</div>
+	<div class="funcButtons" id="statedb">SYSTEM STATE</div>
+	<div class="funcButtons" id="processdb">PROCESS LIST</div>
+
+	<div id="tableContainer">
+		<table>
+			<tr>
+				<th>DATABASES</th>
+				<th>ENCODING</th>
+				<th>TABLES</th>
+				<th>SIZE</th>
+			</tr>
+
+			<?php
+				for ($i = 0; $i < count($data["databases"]); $i++) {
+
+					echo "<tr class='dataCells'>";
+					echo "<td>" . $data["databases"][$i] . "</td>";
+					echo "<td>" . "encoing" . "</td>";
+					echo "<td>" . "tables" . "</td>";
+					echo "<td>" . "size" . "</td>";
+					echo "</tr>";
+
+				}
+			?>
+		</table>
+	</div>
+	
+</div>

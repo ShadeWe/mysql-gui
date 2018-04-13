@@ -4,7 +4,7 @@ window.onload = function() {
 
 	document.getElementById("loginButton").onclick = function() {
 
-		var params = "?login[name]=" + document.getElementById("usernameInput").value +
+		var params = "login?login[name]=" + document.getElementById("usernameInput").value +
 					"&login[pass]=" + document.getElementById("passwordInput").value;
 
 		xhr.open("GET", params, true);
@@ -13,8 +13,9 @@ window.onload = function() {
 		xhr.onreadystatechange  = function () {
 		    if (xhr.readyState === xhr.DONE) {
 		        if (xhr.status === 200) {
+		        	console.log(xhr.responseText);
 		            if (xhr.responseText == "OK") {
-		            	window.location.replace("/databases");
+		            	window.location.replace("/home");
 		            }
 		        }
 		    }

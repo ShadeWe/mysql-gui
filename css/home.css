@@ -1,0 +1,252 @@
+html, body {
+	margin: 0;
+}
+
+#selectedInformer {
+	position: absolute;
+	top: 165px;
+	left: 65px;
+}
+
+#deletedb {
+	user-select: none;
+	cursor: pointer;
+	font-family: Arial;
+	font-size: 12px;
+	padding: 5px;
+	background-color: #D97482;
+	position: absolute;
+	top: 160px;
+	left: 0px;
+}
+#deletedb:hover {
+	background-color: #C6727D;
+}
+#deletedb:active {
+	background-color: #AE5A65;
+}
+
+#showvars {
+	top: 130px;
+}
+#statedb {
+	top: 100px;
+}
+#processdb {
+	top: 70px;
+}
+
+.funcButtons {
+	user-select: none;
+	cursor: pointer;
+	font-family: Arial;
+	font-size: 12px;
+	padding: 5px;
+	background-color: #8FD5D3;
+	position: absolute;
+	top: 160px;
+	right: 0px;
+}
+
+.funcButtons:hover {
+	background-color: #77BDBB;
+}
+.funcButtons:active {
+	background-color: #7BAFAE;
+}
+
+#wrap {
+	width: 900px;
+	height: 500px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -370px;
+	margin-top: -250px;
+}
+
+#tableContainer {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	padding-right: 10px;
+	width: 900px;
+	height: 300px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -50px;
+	margin-left: -450px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+    background: #ffffff; 
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+.dataCells {
+	cursor: pointer;
+	background-color: #F7F7F7;
+}
+.dataCells:hover {
+	background-color: #EBEBEB;
+}
+.dataCells:active {
+	background-color: #DCDCDC;
+}
+
+
+table {
+	table-layout: fixed;
+	width: 900px;
+    border-collapse: collapse;
+    text-align: left;
+    margin: auto;
+}
+
+th {
+	background-color: #8FD5D3;
+	text-align: center;
+	padding: 7px;
+	font-family: Arial;
+	font-size: 13px;
+    border: solid 1px black;
+}
+
+td {
+	padding: 3px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-family: Arial;
+	font-size: 13px;
+	border: solid 1px black;
+}
+
+
+
+#userInfoBox {
+	font-family: Arial;
+	font-size: 13px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	text-align: right;
+}
+
+.dbnameContainer {
+	width: 145px;
+	background-color: #C0E9E1;
+	padding: 8px;
+	font-family: Arial;
+	font-size: 13px;
+	text-overflow: ellipsis;
+	transition-property: background-color;
+	transition-duration: 0.2s;
+	user-select: none;
+}
+.dbnameContainer:hover {
+	background-color: #B1DFD6;
+}
+.dbnameContainer:active {
+	background-color: #9CCAC1;
+}
+
+#dbsContainer {
+	position: absolute;
+	left: 300px;
+	bottom: 50px;
+	margin-top: 20px;
+	padding-right: 50px;
+	width: 160px;
+	height: 280px;
+}
+
+#leftPanel {
+	overflow: hidden;
+	position: absolute;
+	background-color: #F8F8F8;
+	width: 160px;
+	height: 100%;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+#logo {
+	margin-left: 10px;
+	margin-top: 10px;
+	padding: 5px; 
+	user-select: none;
+}
+
+#lWord {
+	font-weight: bold;
+	font-size: 40px;
+	font-family: Arial;
+}
+
+#sWord {
+	font-weight: bold;
+	font-size: 10px;
+	font-family: Arial;
+}
+
+#buttonContainer {
+	margin-top: 50px;
+}
+
+.leftPanelButtons {
+	cursor: pointer;
+	width: 145px;
+	background-color: #8FD5D3;
+	padding: 8px;
+	font-family: Arial;
+	font-size: 12px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	transition-property: background-color;
+	transition-duration: 0.2s;
+	user-select: none;
+}
+.leftPanelButtons:hover {
+	background-color: #77BDBB;
+}
+.leftPanelButtons:active {
+	background-color: #7BAFAE;
+}
+
+#exitButton {
+	background-color: #D97482;
+	position: absolute;
+	bottom: 60px;
+}
+#exitButton:hover {
+	background-color: #C6727D;
+}
+#exitButton:active {
+	background-color: #AE5A65;
+}
+
+#variablesContainer {
+	width: 900px;
+	height: 500px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -370px;
+	margin-top: -250px;
+	z-index: 1;
+	background-color: #F8F8F8;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
