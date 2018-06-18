@@ -15,7 +15,13 @@ window.onload = function() {
 		        if (xhr.status === 200) {
 		        	console.log(xhr.responseText);
 		            if (xhr.responseText == "OK") {
+		            	document.getElementById("message").textContent = "CONNECTING ...";
+		            	document.getElementById("message").style.visibility = 'visible';
+		            	document.getElementById("message").style.opacity = '1';
 		            	window.location.replace("/home");
+		            } else {
+		            	document.getElementById("message").style.visibility = 'visible';
+		            	document.getElementById("message").style.opacity = '1';
 		            }
 		        }
 		    }

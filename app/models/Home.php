@@ -16,6 +16,57 @@ class Home {
 		
 	}
 
+	static function getEncoding($dbs) {
+
+		$data;
+
+		for ($i = 0; $i < count($dbs); $i++) {
+
+			self::$pdo->query("USE " . $dbs[$i] . ";");
+			$result = self::$pdo->query("SELECT @@collation_database;");
+			$data[$i] = $result->fetch()[0];
+		}
+
+		return $data;
+	}
+
+	static function getDatabasesSize($dbs) {
+
+		$result = self::$pdo->query('SELECT table_schema "dbname", sum( data_length + index_length) / 1024 / 1024 
+"size" FROM information_schema.TABLES GROUP BY table_schema ;');
+		
+		$data;
+		$temp;
+
+		for ($i = 0; $i < count($dbs); $i++) {
+			$data[$i] = $result->fetch();
+		}
+
+		for ($i = 0; $i < count($dbs); $i++) {
+			for ($k = 0; $k < count($dbs); $k++) {
+				if ($dbs[$i] == $data[$k]["dbname"]) {
+					$temp[$i] = $data[$k]["size"];
+				}
+			}
+			if (!isset($temp[$i])) $temp[$i] = 0;
+		}
+
+		return $temp;
+	}
+
+	static function getNumberOfTables($dbs) {
+
+		$data;
+
+		for ($i = 0; $i < count($dbs); $i++) {
+
+			$result = self::$pdo->query("SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = '" . $dbs[$i] . "';");
+			$data[$i] = $result->fetch()[0];
+		}
+
+		return $data;
+	}
+
 	// returns all the databases of the user
 	static function getDatabases() {
 
@@ -23,7 +74,7 @@ class Home {
 
 		$i = 0;
 
-		$data = array();
+		$data;
 
 		while ($row = $result->fetch()) {
 			$data[$i] = $row[0];

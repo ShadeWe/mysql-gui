@@ -6,6 +6,10 @@ class MainController {
 
 	function actionIndex() {
 
+		if (isset($_SESSION["username"]) && isset($_SESSION["password"])) {
+			header("Location: /home");
+		}
+
 		include "app/views/main_view.php";
 
 	}

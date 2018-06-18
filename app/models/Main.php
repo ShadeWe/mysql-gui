@@ -9,9 +9,9 @@ class Main {
 		}
 		catch (PDOException $e) {
 			print $e->getMessage();
-	    	die();
+	    		die();
 		}
-		echo "OK";
+
 		return $pdo;
 		
 	}

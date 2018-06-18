@@ -12,9 +12,13 @@ class HomeController {
 
 			// getting the list of databases and the version of DBMS
 			$data = Home::getDatabases();
+			$enc = Home::getEncoding($data);
+			$size = Home::getDatabasesSize($data);
+			$num = Home::getNumberOfTables($data);
 			$version = Home::getVersion();
 
-			$data = array("databases" => $data, "version" => $version);
+
+			$data = array("databases" => $data, "version" => $version, "encoding" => $enc, "number" => $num, "size" => $size);
 
 			include "app/views/home_view.php";
 

@@ -14,7 +14,8 @@
 	
 	<div id="logo">
 		<span id="lWord">SQL</span>
-		<span id="sWord">EATER</span>
+		<br>
+		<span id="sWord">VIEWER</span>
 	</div>
 
 	<div id="buttonContainer">
@@ -43,10 +44,9 @@
 	<div class="funcButtons" id="statedb">SYSTEM STATE</div>
 	<div class="funcButtons" id="processdb">PROCESS LIST</div>
 
-	<div id="tableContainer">
 		<table>
 			<tr>
-				<th>DATABASES</th>
+				<th>DATABASE NAME</th>
 				<th>ENCODING</th>
 				<th>TABLES</th>
 				<th>SIZE</th>
@@ -57,14 +57,13 @@
 
 					echo "<tr class='dataCells'>";
 					echo "<td>" . $data["databases"][$i] . "</td>";
-					echo "<td>" . "encoing" . "</td>";
-					echo "<td>" . "tables" . "</td>";
-					echo "<td>" . "size" . "</td>";
+					echo "<td>" . $data["encoding"][$i] . "</td>";
+					echo "<td>" . $data["number"][$i] . "</td>";
+					echo "<td>" . round($data["size"][$i], 3) . " mb </td>";
 					echo "</tr>";
 
 				}
 			?>
 		</table>
-	</div>
 	
 </div>

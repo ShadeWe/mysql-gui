@@ -1,6 +1,20 @@
 html, body {
 	margin: 0;
+	background-color: white;
 }
+
+#message {
+	visibility: hidden;
+  	opacity:0;
+  	transition: opacity 0.5s linear;
+	font-family: Arial;
+	font-size: 11px;
+	position: absolute;
+	bottom: 70px;
+	width: 400px;
+	text-align: center;
+}
+
 
 #loginBox {
 	width: 400px;
@@ -42,7 +56,7 @@ html, body {
 	font-weight: lighter;
 	color: white;
 	text-shadow: 0px 0px 1px rgba(0,0,0,0.5);
-	background-color: #A7D5E4;
+	background-color: #B4B4B4;
 	width: 400px;
 	height: 60px;
 	position: absolute;
@@ -53,8 +67,8 @@ html, body {
 	transition-duration: 0.2s;
 }
 #loginButton:hover {
-	background-color: #97C8D8;
+	background-color: #ABABAB;
 }
 #loginButton:active {
-	background-color: #7EAFBF;
+	background-color: #9C9C9C;
 }

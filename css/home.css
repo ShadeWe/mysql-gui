@@ -1,5 +1,6 @@
 html, body {
 	margin: 0;
+	background-color: white;
 }
 
 #selectedInformer {
@@ -10,6 +11,7 @@ html, body {
 
 #deletedb {
 	user-select: none;
+	-moz-user-select: none;
 	cursor: pointer;
 	font-family: Arial;
 	font-size: 12px;
@@ -38,21 +40,22 @@ html, body {
 
 .funcButtons {
 	user-select: none;
+	-moz-user-select: none;
 	cursor: pointer;
 	font-family: Arial;
 	font-size: 12px;
 	padding: 5px;
-	background-color: #8FD5D3;
+	background-color: #ADC1C0;
 	position: absolute;
 	top: 160px;
 	right: 0px;
 }
 
 .funcButtons:hover {
-	background-color: #77BDBB;
+	background-color: #9CAEAD;
 }
 .funcButtons:active {
-	background-color: #7BAFAE;
+	background-color: #8D9C9B;
 }
 
 #wrap {
@@ -65,18 +68,6 @@ html, body {
 	margin-top: -250px;
 }
 
-#tableContainer {
-	overflow-y: scroll;
-	overflow-x: hidden;
-	padding-right: 10px;
-	width: 900px;
-	height: 300px;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-top: -50px;
-	margin-left: -450px;
-}
 
 ::-webkit-scrollbar {
     width: 10px;
@@ -115,10 +106,12 @@ table {
     border-collapse: collapse;
     text-align: left;
     margin: auto;
+    margin-top: 200px;
+    margin-bottom: 50px;
 }
 
 th {
-	background-color: #8FD5D3;
+	background-color: #ADC1C0;
 	text-align: center;
 	padding: 7px;
 	font-family: Arial;
@@ -176,7 +169,7 @@ td {
 
 #leftPanel {
 	overflow: hidden;
-	position: absolute;
+	position: fixed;
 	background-color: #F8F8F8;
 	width: 160px;
 	height: 100%;
@@ -187,6 +180,7 @@ td {
 	margin-left: 10px;
 	margin-top: 10px;
 	padding: 5px; 
+	-moz-user-select: none;
 	user-select: none;
 }
 
@@ -198,7 +192,8 @@ td {
 
 #sWord {
 	font-weight: bold;
-	font-size: 10px;
+	font-size: 12px;
+	margin-left: 5px;
 	font-family: Arial;
 }
 
@@ -209,7 +204,7 @@ td {
 .leftPanelButtons {
 	cursor: pointer;
 	width: 145px;
-	background-color: #8FD5D3;
+	background-color: #ADC1C0;
 	padding: 8px;
 	font-family: Arial;
 	font-size: 12px;
@@ -218,12 +213,15 @@ td {
 	transition-property: background-color;
 	transition-duration: 0.2s;
 	user-select: none;
+	-moz-user-select: none;
 }
+
 .leftPanelButtons:hover {
-	background-color: #77BDBB;
+	background-color: #9CAEAD;
 }
+
 .leftPanelButtons:active {
-	background-color: #7BAFAE;
+	background-color: #8D9C9B;
 }
 
 #exitButton {
