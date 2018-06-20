@@ -3,6 +3,151 @@ html, body {
 	background-color: white;
 }
 
+#collasion {
+	position: absolute;
+	top: 65px;
+	left: 25px;
+	font-family: Arial;
+	font-size: 11px;
+	color: #8B8B8B;
+}
+#dbname {
+	position: absolute;
+	top: 65px;
+	left: 225px;
+	font-family: Arial;
+	font-size: 11px;
+	color: #8B8B8B;
+}
+
+#db-name-field {
+	border: none;
+	border-bottom: 1px solid #ccc;
+	position: absolute;
+	top: 90px;
+	left: 220px;
+	width: 250px;
+	padding: 4px 6px;
+}
+
+#custom-select {
+	z-index: 5;
+	position: absolute;
+	top: 90px;
+	left: 25px;
+	padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    width: 170px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+#custom-select select {
+	overflow-y: auto;
+	width: 170px;
+	padding: 3px 6px;
+    border: none;
+    box-shadow: none;
+}
+
+
+.window-header {
+	user-select: none;
+	-moz-user-select: none;
+	position: absolute;
+	left: 15px;
+	top: 15px;
+	font-family: Arial;
+	font-size: 16px;
+}
+
+.createdb-buttons {
+	user-select: none;
+	-moz-user-select: none;
+	font-family: Arial;
+	text-align: center;
+	line-height: 40px;
+	font-size: 16px;
+	background-color: red;
+	cursor: pointer;
+	transition-duration: 0.1s;
+}
+
+#cancel-button {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 50%;
+	height: 40px;
+	background-color: #BD8C8C;	
+}
+#cancel-button:hover {
+	background-color: #AD8080;
+}
+
+#cancel-button:active {
+	background-color: #987272;
+}
+
+#ok-button {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 50%;
+	height: 40px;
+	background-color: #BD8C8C;	
+	background-color: #ADC1C0;	
+}
+
+#ok-button:hover {
+	background-color: #9CAEAD;
+}
+
+#ok-button:active {
+	background-color: #8D9C9B;
+}
+
+#createdb-window {
+	visibility: hidden;
+	opacity: 0;
+	z-index: 3;
+	background-color: white;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+	position: fixed;
+	width: 500px;
+	height: 230px;
+	left: 50%;
+	top: 50%;
+	margin-left: -250px;
+	margin-top: -100px;
+	transition-duration: 0.5s;
+	transition-property: all;
+}
+
+#background {
+	opacity: 0;
+	visibility: hidden;
+	z-index: 2;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	transition-duration: 0.5s;
+	transition-property: all;
+}
+
+#bottom {
+	width: 100%;
+	height: 100px;
+	background-color: white;
+	position: fixed;
+	left: 0;
+	bottom: -70px;
+	-webkit-filter: blur(15px);
+    -moz-filter: blur(15px);
+}
+
 #selectedInformer {
 	position: absolute;
 	top: 165px;
@@ -168,6 +313,7 @@ td {
 }
 
 #leftPanel {
+	z-index: 1;
 	overflow: hidden;
 	position: fixed;
 	background-color: #F8F8F8;

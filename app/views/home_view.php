@@ -1,9 +1,39 @@
 <link rel="stylesheet" type="text/css" href="/css/home.css">
-<script type="text/javascript" src="js/databasesPage.js"></script>
+<script type="text/javascript" src="js/homepage.js"></script>
+
+
+<div id="background"></div>
+<div id="createdb-window">
+
+	<div class="window-header">CREATING DATABASE</div>
+
+	<form method="GET" action='home' id="create-db-form">
+
+		<div id="collasion">COLLASION</div>
+		<div id="custom-select">
+			<select id="select-charset" onmousedown="this.size=5;"  onchange='this.size=0;' onblur="this.size=0;">
+			  <option value="" selected disabled hidden>choose here</option>
+			  <?php
+			  	for ($i = 0; $i < count($data["collasion"]); $i++)
+			  		echo "<option>" . $data["collasion"][$i]["Default collation"] . "</option>";
+
+			  ?>
+			</select>
+		</div>
+
+		<div id="dbname">DATABASE NAME</div>
+		<input type="text" id="db-name-field" name="dbname">
+
+		<div class="createdb-buttons" id="ok-button">OK</div>
+		<div class="createdb-buttons" id="cancel-button">CANCEL</div>
+
+	</form>
+
+</div>
 
 <div id="userInfoBox">
 			
-			<?php 
+			<?php
 				echo "DBMS version: " . "<b>" .$data["version"] . "</b>" . "<br>";
 				echo "You are logged on as: " . "<b>" . $_SESSION["username"] . "</b>";
 			?>
@@ -24,9 +54,7 @@
 		<div class="leftPanelButtons">EXPORT</div>
 	</div>
 
-	<div class="leftPanelButtons" id="exitButton">
-		EXIT
-	</div>
+	<div class="leftPanelButtons" id="exitButton">EXIT</div>
 
 </div>
 
@@ -46,8 +74,8 @@
 
 		<table>
 			<tr>
-				<th>DATABASE NAME</th>
-				<th>ENCODING</th>
+				<th>DATABASE</th>
+				<th>COLLATION</th>
 				<th>TABLES</th>
 				<th>SIZE</th>
 			</tr>
@@ -65,5 +93,7 @@
 				}
 			?>
 		</table>
-	
+	<div id="bottom">
+		
+	</div>
 </div>

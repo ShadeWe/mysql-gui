@@ -16,6 +16,12 @@ class Home {
 		
 	}
 
+	static function createDatabase($dbname, $collation) {
+
+		self::$pdo->query("CREATE DATABASE `". $dbname . "` COLLATE '" . $collation . "';");
+
+	}
+
 	static function getEncoding($dbs) {
 
 		$data;
@@ -30,6 +36,10 @@ class Home {
 		return $data;
 	}
 
+	static function getCharacterSetsAvailable() {
+		return self::$pdo->query('SHOW CHARACTER SET;')->fetchAll();
+	}
+
 	static function getDatabasesSize($dbs) {
 
 		$result = self::$pdo->query('SELECT table_schema "dbname", sum( data_length + index_length) / 1024 / 1024 
@@ -38,6 +48,7 @@ class Home {
 		$data;
 		$temp;
 
+		// extracting databases' sizes and names
 		for ($i = 0; $i < count($dbs); $i++) {
 			$data[$i] = $result->fetch();
 		}
@@ -109,8 +120,5 @@ class Home {
 		return $result->fetch()["@@VERSION"];
 
 	}
-
-
-
 
 }
