@@ -18,9 +18,7 @@ class Router {
 
 		foreach ($this->routes as $uriPattern => $path) {
 
-
 			if (preg_match("~^$uriPattern$~", $uri)) {
-				
 
 				$segments = explode('/', $path);
 

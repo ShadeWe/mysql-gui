@@ -1,5 +1,16 @@
 window.onload = function() {
 
+	var buttonPressed;
+	window.onkeydown = function(e) {
+		if (e.keyCode == 16)
+			buttonPressed = 16;
+	}
+
+	window.onkeyup = function(e) {
+		buttonPressed = 0;
+	}
+
+	// the createdb window pops up when this button's clicked
 	document.getElementById('createdb').onclick = function() {
 		document.getElementById("createdb-window").style.visibility = 'visible';
 		document.getElementById("background").style.visibility = 'visible';
@@ -7,14 +18,7 @@ window.onload = function() {
 		document.getElementById("background").style.opacity = "0.8";
 	}
 
-
-	document.getElementById("cancel-button").onclick = function() {
-		document.getElementById("createdb-window").style.opacity = '0';
-		document.getElementById("background").style.opacity = "0";
-		document.getElementById("createdb-window").style.visibility = 'hidden';
-		document.getElementById("background").style.visibility = 'hidden';
-	}
-
+	// the OK button in the createdb window
 	document.getElementById("ok-button").onclick = function() {
 
 		var select = document.getElementById("select-charset");
@@ -22,24 +26,33 @@ window.onload = function() {
 		var dbname = document.getElementById("db-name-field").value;
 
 		if (value != "" && dbname != "") {
-			var xhr = new XMLHttpRequest();
-
-			xhr.open('GET', 'home?db[collation]=' + value + "&db[name]=" + dbname, true);
-			xhr.send();
-
-			xhr.onreadystatechange  = function () {
-			    if (xhr.readyState === xhr.DONE) {
-			        if (xhr.status === 200) {
-			            if (xhr.responseText == "OK") {
-			            	console.log("the database has been added");
-			            } else {
-			            	console.log(xhr.responseText);
-			            }
-			        }
-			    }
-			};
+			document.getElementById('create-db-form').submit();
 		}
+	}
 
+	// the CANCEL button in the createdb window
+	document.getElementById("cancel-button").onclick = function() {
+		document.getElementById("createdb-window").style.opacity = '0';
+		document.getElementById("background").style.opacity = "0";
+		document.getElementById("createdb-window").style.visibility = 'hidden';
+		document.getElementById("background").style.visibility = 'hidden';
+	}
+
+
+	var dataCells = document.getElementsByClassName("dataCells");
+
+	for (let i = 0; i < dataCells.length; i++) {
+		dataCells[i].onclick = function() {
+			if (buttonPressed == 16) {
+				if (dataCells[i].hasAttribute("selected")) {
+					dataCells[i].removeAttribute("selected");
+				} else {
+					dataCells[i].setAttribute("selected");
+				}
+			} else {
+				window.location.href = "/home/viewdb?dbname=" + dataCells[i].childNodes[0].textContent;
+			}
+		}
 	}
 
 }

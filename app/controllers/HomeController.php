@@ -4,20 +4,32 @@ include "app/models/Home.php";
 
 class HomeController {
 
-	 function actionIndex() {
+     function actionViewtableinfo() {
+     	Home::connect($_SESSION["username"], $_SESSION["password"]);
+     	$data = Home::getTablesDescription($_GET["table"], $_GET["dbname"]);
 
-	 	if (isset($_GET["db"]["collation"]) && isset($_GET["db"]["name"])) {
+     	include "app/views/viewtb_view.php";
 
-	 		Home::connect($_SESSION["username"], $_SESSION["password"]);
+     }
 
-	 		Home::createDatabase($_GET["db"]["name"], $_GET["db"]["collation"]);
+	 function actionViewdatabase() {
 
-	 		echo "OK";
+	 	Home::connect($_SESSION["username"], $_SESSION["password"]);
 
-	 		return 0;
+	 	if (isset($_GET["collation"]) && isset($_GET["dbname"])) {
+	 		Home::createDatabase($_GET["dbname"], $_GET["collation"]);
 	 	}
 
-	 	if (isset($_SESSION["username"]) && isset($_SESSION["password"]));
+	 	$tables = Home::getTables($_GET["dbname"]);
+	 	
+	 	include "app/views/viewdb_view.php";
+
+	 }
+
+
+	 function actionIndex() {
+
+		 	if (isset($_SESSION["username"]) && isset($_SESSION["password"]));
 
 	 		Home::connect($_SESSION["username"], $_SESSION["password"]);
 	 		
@@ -36,7 +48,7 @@ class HomeController {
 				"encoding" => $enc, 
 				"number" => $num, 
 				"size" => $size, 
-				"collasion" => $cset
+				"collasion" => $cset 
 			);
 
 			include "app/views/home_view.php";

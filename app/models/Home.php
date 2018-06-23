@@ -13,13 +13,16 @@ class Home {
 			print $e->getMessage();
 	    	die();
 		}
-		
 	}
 
-	static function createDatabase($dbname, $collation) {
-
+	static function getTablesDescription($table, $dbname) {
+		self::$pdo->query("USE " . $dbname . ";");
+		$result = self::$pdo->query("DESCRIBE " . $table);
+		return $result->fetchAll();
+	}
+ 
+ 	static function createDatabase($dbname, $collation) {
 		self::$pdo->query("CREATE DATABASE `". $dbname . "` COLLATE '" . $collation . "';");
-
 	}
 
 	static function getEncoding($dbs) {
@@ -119,6 +122,13 @@ class Home {
 
 		return $result->fetch()["@@VERSION"];
 
+	}
+
+	static function getTables($dbname) {
+		self::$pdo->query("USE " . $dbname . ";");
+		$result = self::$pdo->query("SHOW TABLE STATUS");
+
+		return $result->fetchAll();
 	}
 
 }

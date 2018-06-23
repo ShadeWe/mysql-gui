@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css" href="/css/home.css">
-<script type="text/javascript" src="js/homepage.js"></script>
+<script type="text/javascript" src="/js/homepage.js"></script>
 
 
 <div id="background"></div>
@@ -7,17 +7,19 @@
 
 	<div class="window-header">CREATING DATABASE</div>
 
-	<form method="GET" action='home' id="create-db-form">
+	<form method="GET" action='/home/viewdb' id="create-db-form">
 
 		<div id="collasion">COLLASION</div>
 		<div id="custom-select">
-			<select id="select-charset" onmousedown="this.size=5;"  onchange='this.size=0;' onblur="this.size=0;">
+			<select id="select-charset" onmousedown="this.size=5;"  onchange='this.size=0;' onblur="this.size=0;" name="collation">
 			  <option value="" selected disabled hidden>choose here</option>
+			  
 			  <?php
 			  	for ($i = 0; $i < count($data["collasion"]); $i++)
 			  		echo "<option>" . $data["collasion"][$i]["Default collation"] . "</option>";
 
 			  ?>
+			  
 			</select>
 		</div>
 

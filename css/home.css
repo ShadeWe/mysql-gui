@@ -59,7 +59,7 @@ html, body {
 	left: 15px;
 	top: 15px;
 	font-family: Arial;
-	font-size: 16px;
+	font-size: 14px;
 }
 
 .createdb-buttons {
@@ -68,7 +68,7 @@ html, body {
 	font-family: Arial;
 	text-align: center;
 	line-height: 40px;
-	font-size: 16px;
+	font-size: 13px;
 	background-color: red;
 	cursor: pointer;
 	transition-duration: 0.1s;
@@ -233,7 +233,12 @@ html, body {
     background: #555; 
 }
 
+.dataCells[selected] {
+	background-color: red;
+}
+
 .dataCells {
+	-moz-user-select: none;
 	cursor: pointer;
 	background-color: #F7F7F7;
 }
